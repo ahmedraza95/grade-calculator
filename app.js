@@ -1,9 +1,9 @@
-let start = alert("Hello lets start to calculate your percentage%!");
+let userName = prompt("type your name!");
+let start = alert("Hello" + " " + userName + " " + "lets start to calculate your percentage%!");
 let obtainMarks = prompt("Type you obtain marks");
 let totalMarks = prompt("Type your total marks");
 let multiply = +obtainMarks * 100;
 let result = (multiply / totalMarks);
-
 
 
 if (result > 80) {
