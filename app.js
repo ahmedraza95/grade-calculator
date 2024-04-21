@@ -1,18 +1,46 @@
-let userName = prompt("type your name!");
-let start = alert("Hello" + " " + userName + " " + "lets start to calculate your percentage%!");
-let obtainMarks = prompt("Type you obtain marks");
-let totalMarks = prompt("Type your total marks");
-let multiply = +obtainMarks * 100;
-let result = (multiply / totalMarks);
+let userName = prompt("PLZ type your full Name")
+let inputForm = document.querySelector("#tableForm");
+let inputobtain = document.querySelector("#inputobtain");
+let inputtotal = document.querySelector("#inputtotal");
+let table = document.querySelector(".time-table");
+let userNameDiv = document.querySelector("#username")
 
+userNameDiv.innerHTML = "";
 
-if (result > 80) {
-    alert("congratulation you achieve A1 Grade and your percentage is" + " " + result + "%" ) ;
-  }else if (result > 60) { 
-    alert("nice effort you achieve B Grade and your percentage is" + " " + result  + "%");
-  }else if (result > 40) { 
-    alert("great achieve C Grade and your percentage is" + " " + result  + "%");
+userNameDiv.innerHTML += "Hello, " + userName + "👋👋";
+
+inputForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let obtain = inputobtain.value;
+  let total = inputtotal.value;
+  
+  
+  let multiply = obtain * 100;
+  let result = (multiply / total);
+
+  result = parseFloat(result)
+
+  console.log(result);
+
+  table.innerHTML = "";
+
+  if (result => 80) {
+    table.innerHTML += "<p>Congratulation you achieve A1-Grade and your percentage is " + result + "% 🥳🥳</p>" ;
+  
+  } else if (result => 70 ) {
+    table.innerHTML += "<p>Nice Effort you achieve A-Grade and your percentage is " + result + "% 🥳🥳</p>" ;
+  } else if (result => 65 ) {
+    table.innerHTML += "<p>GOOD you achieve B+-Grade and your percentage is " + result + "% 🥳🥳</p>" ;
+  }else if (result => 60 ) {
+    table.innerHTML += "<p>Nice Need more better you achieve B-Grade and your percentage is " + result + "% 🥳🥳</p>" ;
+
+  } else if (result => 50 ) {
+    table.innerHTML += "<p>Well Done you achieve c-Grade and your percentage is " + result + "% 🥳🥳</p>" ;
+  } else if (result => 40 ) {
+    table.innerHTML += "<p>just passing marks need better for next time you achieve D-Grade and your percentage is " + result + "% 🥳🥳</p>" ;
+  } else {
+    table.innerHTML += "<p>oohhhh Your Fail  you achieve F-Grade and your percentage is " + result + "% 😭😭😭 Better luck For next time</p>" ;
+
   }
-   else {
-    alert("oh my God You are Fail your grade is F your percentage is" + " " + result + "%");
-  }
+})
+
